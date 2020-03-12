@@ -35,7 +35,7 @@ script:
   - $CXX --version
   - cmake --version
   - mkdir build && cd build
-  - cmake -D CMAKE_BUILD_TYPE=Release ../
+  - cmake -D CMAKE_BUILD_TYPE=Release -D BUILD_TESTING=OFF ../
   - make -j16
   - ctest -j16 --no-compress-output -T Test -E '(helgrind|stress|drd|test_insert_unique|try-leak-reachable|dump-env|checkpoint_fairness).*'
 
