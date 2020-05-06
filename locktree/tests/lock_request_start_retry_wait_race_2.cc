@@ -98,6 +98,7 @@ namespace toku {
             }
 
             request.destroy();
+            request.clearmem(0xab);
 
             toku_pthread_yield();
             if ((i % 10) == 0)

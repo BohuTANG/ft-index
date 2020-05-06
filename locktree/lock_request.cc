@@ -45,6 +45,7 @@ Copyright (c) 2006, 2015, Percona and/or its affiliates. All rights reserved.
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
+   limitations under the License.
 ======= */
 
 #ident "Copyright (c) 2006, 2015, Percona and/or its affiliates. All rights reserved."
@@ -90,6 +91,10 @@ void lock_request::destroy(void) {
     toku_destroy_dbt(&m_left_key_copy);
     toku_destroy_dbt(&m_right_key_copy);
     toku_cond_destroy(&m_wait_cond);
+}
+
+void lock_request::clearmem(char c) {
+     memset(this, c, sizeof(* this));
 }
 
 // set the lock request parameters. this API allows a lock request to be reused.

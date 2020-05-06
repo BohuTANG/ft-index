@@ -45,6 +45,7 @@ Copyright (c) 2006, 2015, Percona and/or its affiliates. All rights reserved.
    distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
+   limitations under the License.
 ======= */
 
 #ident "Copyright (c) 2006, 2015, Percona and/or its affiliates. All rights reserved."
@@ -88,6 +89,7 @@ public:
 
     // effect: Destroys a lock request.
     void destroy(void);
+    void clearmem(char c);
 
     // effect: Resets the lock request parameters, allowing it to be reused.
     // requires: Lock request was already created at some point
